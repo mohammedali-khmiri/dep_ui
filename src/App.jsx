@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import NewsList from "./pages/NewsList";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-
+import TeacherList from "./pages/TeacherList";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -24,6 +24,9 @@ const App = () => {
 				</Route>
 				<Route path="/new/:id">
 					<New />
+				</Route>
+				<Route path="/teachers/:category">
+					<TeacherList />
 				</Route>
 
 				<Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>

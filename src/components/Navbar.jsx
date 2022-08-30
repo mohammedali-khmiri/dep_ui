@@ -42,10 +42,10 @@ const Input = styled.input`
 `;
 
 const Center = styled.div`
-	flex: 1;
+	flex: 3;
 	display: flex;
 	align-items: center;
-	
+
 	${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
@@ -57,10 +57,11 @@ const Right = styled.div`
 	flex: 1;
 	display: flex;
 	align-items: center;
-  justify-content: flex-end;
+	justify-content: flex-end;
 `;
 
 const MenuItem = styled.div`
+	font-weight: 600;
 	font-size: 14px;
 	cursor: pointer;
 	margin-left: 25px;
@@ -75,11 +76,14 @@ const Navbar = () => {
 					<Logo>ISET_J.</Logo>
 				</Left>
 				<Center>
-					<MenuItem>Home</MenuItem>
-					<MenuItem>About</MenuItem>
-					<MenuItem>Contact</MenuItem>
-					<MenuItem>Register</MenuItem>
-					<MenuItem>Sign In</MenuItem>
+					<MenuItem>ACCUEIL</MenuItem>
+					<MenuItem>PRÉSENTATION</MenuItem>
+					<MenuItem>FORMATIONS</MenuItem>
+					<MenuItem>ETUDIANTS</MenuItem>
+					<MenuItem>PARTENARIATS</MenuItem>
+					
+					<MenuItem>ENSEIGNANTS</MenuItem>
+					<MenuItem>STAGES ET EMPLOIS</MenuItem>
 				</Center>
 				<Right>
 					<Language>EN</Language>

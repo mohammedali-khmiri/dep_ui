@@ -28,19 +28,19 @@ export const categories = [
 		id: 1,
 		img: "https://www.3il-ingenieurs.fr/content/uploads/2020/06/systemes-embarques-4.jpg",
 		title: "Systémes Embarqués & Mobile",
-		cat: "SEM",
+		cat: "sem",
 	},
 	{
 		id: 2,
 		img: "https://upload.itg.fr/20180914124642/consultant-informtique-architecte-reseau-card.jpg",
 		title: "Réseaux des Systémes d'Information",
-		cat: "RSI",
+		cat: "rsi",
 	},
 	{
 		id: 3,
 		img: "https://f.hellowork.com/edito/sites/3/2020/07/cursus-informatique.jpeg",
 		title: "Développement des Systémes d'Information",
-		cat: "DSI",
+		cat: "dsi",
 	},
 ];
 
@@ -85,5 +85,57 @@ export const popularNews = [
 	{
 		id: 8,
 		img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+	},
+];
+
+//enseigants
+export const popularTeachers = [
+	{
+		id: 1,
+		img: "https://img.lovepik.com/element/45001/3052.png_860.png",
+		firstname: "Bouslimi",
+		lastname: "riadh",
+		speciality: "mobile",
+		grade: "chep departement",
+	},
+	{
+		id: 2,
+		img: "https://cdn3.vectorstock.com/i/1000x1000/01/77/businesswoman-character-avatar-icon-vector-12800177.jpg",
+		firstname: "bel haj",
+		lastname: "abir",
+		speciality: "Professeur",
+		grade: "Maitre assistant",
+	},
+	{
+		id: 3,
+		img: "http://editions-agapante.com/wa_images/avatar-user-business-man-399587fe24739d5a-512x512.png?v=1fp3aen",
+		firstname: "mbarek",
+		lastname: "yassine",
+		speciality: "Développement",
+		grade: "Professeur",
+	},
+	{
+		id: 4,
+		img: "https://as1.ftcdn.net/v2/jpg/01/16/24/44/1000_F_116244459_pywR1e0T3H7FPk3LTMjG6jsL3UchDpht.jpg",
+		firstname: "kalaii",
+		lastname: "rim",
+		speciality: "Réseau",
+		grade: "Assistant",
+	},
+	{
+		id: 5,
+		img: "https://cdn3.vectorstock.com/i/1000x1000/57/42/person-avatar-user-icon-vector-14625742.jpg",
+		firstname: "ferchichi",
+		lastname: "hafedh",
+		speciality: "Big data",
+		grade: "Maitre assistant",
+	},
+	{
+		id: 6,
+		img: "https://cdn5.vectorstock.com/i/1000x1000/01/69/businesswoman-character-avatar-icon-vector-12800169.jpg",
+		firstname: "amroui",
+		lastname: "amina",
+		speciality: "Soap",
+		grade: "Maitre assistant",
 	},
 ];
