@@ -11,9 +11,10 @@ import {
 	Redirect,
 } from "react-router-dom";
 import Teacher from "./pages/Teacher";
+import { useSelector } from "react-redux";
 
 const App = () => {
-	const user = true;
+	const user = useSelector((state) => state.user.currentUser);
 	return (
 		<Router>
 			<Switch>
