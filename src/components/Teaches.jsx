@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { popularTeachers } from "../data";
 import Teacher from "./Teacher";
 import axios from "axios";
 import { useState } from "react";
@@ -12,24 +11,34 @@ const Container = styled.div`
 	justify-content: space-between;
 `;
 
-const Teachers = ({ cat, filters }) => {
-	const [products, setProducts] = useState([]);
-	const [filteredProducts, setFilteredProducts] = useState([]);
+const Teachers = ({ filters }) => {
+	const [teachers, setTeachers] = useState([]);
+	const [filteredTeachers, setFilteredTeachers] = useState([]);
 
 	useEffect(() => {
-		const getProducts = async () => {
+		const getTeachers = async () => {
 			try {
 				const res = await axios.get("http://localhost:3000/api/teachers");
-				console.log(res);
+				setTeachers(res.data);
 			} catch (err) {}
 		};
-		getProducts();
-	}, [cat]);
+		getTeachers();
+	}, []);
+
+	useEffect(() => {
+		setFilteredTeachers(
+			teachers.filter((item) =>
+				Object.entries(filters).every(([key, value]) =>
+					item[key].includes(value)
+				)
+			)
+		);
+	}, [teachers, filters]);
 
 	return (
 		<Container>
-			{popularTeachers.map((item) => (
-				<Teacher item={item} key={item.id} />
+			{filteredTeachers.map((item) => (
+				<Teacher item={item} key={item._id} />
 			))}
 		</Container>
 	);

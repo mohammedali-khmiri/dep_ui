@@ -55,9 +55,7 @@ const ImgContainer = styled.div`
   flex: 1;
 `;
 
-const Image = styled.img`
-  height: 60%;
-`;
+
 
 const InfoContainer = styled.div`
 flex: 1;

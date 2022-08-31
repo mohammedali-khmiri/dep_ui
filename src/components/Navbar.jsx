@@ -1,6 +1,6 @@
-import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Search } from "@material-ui/icons";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -81,8 +81,10 @@ const Navbar = () => {
 					<MenuItem>FORMATIONS</MenuItem>
 					<MenuItem>ETUDIANTS</MenuItem>
 					<MenuItem>PARTENARIATS</MenuItem>
-					
-					<MenuItem>ENSEIGNANTS</MenuItem>
+					<Link to="/teachers">
+						<MenuItem>ENSEIGNANTS</MenuItem>
+					</Link>
+
 					<MenuItem>STAGES ET EMPLOIS</MenuItem>
 				</Center>
 				<Right>

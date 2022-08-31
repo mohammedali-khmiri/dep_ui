@@ -10,6 +10,7 @@ import {
 	Route,
 	Redirect,
 } from "react-router-dom";
+import Teacher from "./pages/Teacher";
 
 const App = () => {
 	const user = true;
@@ -25,10 +26,12 @@ const App = () => {
 				<Route path="/new/:id">
 					<New />
 				</Route>
-				<Route path="/teachers/:category">
+				<Route path="/teachers">
 					<TeacherList />
 				</Route>
-
+				<Route path="/teacher/:id">
+					<Teacher />
+				</Route>
 				<Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
 				<Route path="/register">
 					{user ? <Redirect to="/" /> : <Register />}

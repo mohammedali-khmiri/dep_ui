@@ -3,7 +3,7 @@ import Announcement from "../components/Announcement";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Newsletter from "../components/Newsletter";
+
 import News from "../components/News";
 import Slider from "../components/Slider";
 import styled from "styled-components";
@@ -28,7 +28,6 @@ const Desc = styled.p`
 	color: #024884;
 	font-family: Oregon;
 	letter-spacing: 0.04em;
-  
 `;
 
 const Home = () => {

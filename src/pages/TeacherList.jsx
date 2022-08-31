@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
-import News from "../components/News";
 
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
-import { useLocation } from "react-router-dom";
 import Teachers from "../components/Teaches";
 import { useState } from "react";
 
@@ -40,9 +38,9 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const TeacherList = () => {
-	const location = useLocation();
+	// const location = useLocation();
 	//category
-	const cat = location.pathname.split("/")[2];
+	// const cat = location.pathname.split("/")[2];
 	const [filters, setFilters] = useState({});
 
 	const handleFilters = (e) => {
@@ -62,25 +60,27 @@ const TeacherList = () => {
 				<Filter>
 					<FilterText>Filtrer votre recherche</FilterText>
 					<Select name="specialty" onChange={handleFilters}>
-						<Option disabled>Spécialité de l'enseignant</Option>
-						<Option>Mobile</Option>
-						<Option>Développement web</Option>
-						<Option>Réseau</Option>
-						<Option>Big data</Option>
-						<Option>Soap</Option>
+						<Option disabled selected>
+							Spécialité de l'enseignant
+						</Option>
+						<Option>mobile</Option>
+						<Option>developpement</Option>
+						<Option>reseau</Option>
+						<Option>big data</Option>
+						<Option>soap</Option>
 					</Select>
 					<Select name="grade" onChange={handleFilters}>
 						<Option disabled selected>
 							Grade de l'enseignant
 						</Option>
-						<Option>Assistant</Option>
-						<Option>Maitre assistant</Option>
-						<Option>Professeur</Option>
-						<Option>Chef departement</Option>
+						<Option>assistant</Option>
+						<Option>maitre assistant</Option>
+						<Option>professeur</Option>
+						<Option>chef departement</Option>
 					</Select>
 				</Filter>
 			</FilterContainer>
-			<Teachers cat={cat} filters={filters} />
+			<Teachers filters={filters} />
 
 			<Footer />
 		</Container>

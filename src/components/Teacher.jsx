@@ -1,8 +1,5 @@
-import {
-	FavoriteBorderOutlined,
-	SearchOutlined,
-	ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { FavoriteBorderOutlined, SearchOutlined } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -63,7 +60,6 @@ const ImgContainer = styled.div`
 // `;
 
 const Title = styled.h2`
-	margin: 0 10px;
 	display: flex;
 	justify-content: space-between;
 `;
@@ -84,6 +80,10 @@ const Icon = styled.div`
 	justify-content: center;
 	margin: 10px;
 	transition: all 0.5s ease;
+	&:hover {
+		background-color: #e9f5f5;
+		transform: scale(1.1);
+	}
 `;
 
 const Teacher = ({ item }) => {
@@ -93,15 +93,18 @@ const Teacher = ({ item }) => {
 				<Image src={item.img} />
 			</ImgContainer>
 			<InfoContainer>
-				<Title>{item.firstname}</Title>
-				<Title>{item.lastname}</Title>
+				<Title>
+					{item.firstName} {item.lastName}
+				</Title>
 
 				<Desc>{item.grade}</Desc>
 			</InfoContainer>
 
 			<Info>
 				<Icon>
-					<SearchOutlined />
+					<Link to={`/teacher/${item._id}`}>
+						<SearchOutlined />
+					</Link>
 				</Icon>
 				<Icon>
 					<FavoriteBorderOutlined />

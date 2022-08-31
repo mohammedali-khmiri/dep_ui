@@ -1,8 +1,4 @@
-import {
-	FavoriteBorderOutlined,
-	SearchOutlined,
-	ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { FavoriteBorderOutlined, SearchOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -55,8 +51,6 @@ const Title = styled.h2`
 	margin: 10px;
 `;
 
-const Desc = styled.p``;
-
 const Date = styled.h4``;
 
 const Image = styled.img`
@@ -73,7 +67,6 @@ const Icon = styled.div`
 	justify-content: center;
 	margin: 10px;
 	transition: all 0.5s ease;
-	
 `;
 
 const New = ({ item }) => {
