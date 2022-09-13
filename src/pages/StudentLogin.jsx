@@ -11,14 +11,25 @@ const Container = styled.div`
 			rgba(255, 255, 255, 0.5),
 			rgba(255, 255, 255, 0.5)
 		),
-		url("https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg")
+		url("https://img.freepik.com/free-photo/education-concept-student-studying-brainstorming-campus-concept-close-up-students-discussing-their-subject-books-textbooks-selective-focus_1418-626.jpg?size=626&ext=jpg")
 			center;
 	background-size: cover;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 `;
-
+const Nav = styled.div`
+	height: 60px;
+	width: 90vw;
+	z-index: 2;
+	position: absolute;
+	top: 20px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	align-items: center;
+`;
 const Wrapper = styled.div`
 	width: 25%;
 	padding: 20px;
@@ -68,6 +79,14 @@ const Link = styled.a`
 	cursor: pointer;
 `;
 
+const MenuItem = styled.div`
+	font-weight: 600;
+	font-size: 17px;
+	cursor: pointer;
+	margin-left: 25px;
+	${mobile({ fontSize: "12px", marginLeft: "10px" })}
+`;
+
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -80,8 +99,13 @@ const Login = () => {
 	};
 	return (
 		<Container>
+			<Nav>
+				<MenuItem>Espace Etudiant</MenuItem>
+				<MenuItem>Accueil</MenuItem>
+				<MenuItem>Contact</MenuItem>
+			</Nav>
 			<Wrapper>
-				<Title>SIGN IN</Title>
+				<Title>Sign In</Title>
 				<Form>
 					<Input
 						placeholder="email"
@@ -96,8 +120,8 @@ const Login = () => {
 						LOGIN
 					</Button>
 					{error && <Error>Something went wrong...</Error>}
-					<Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-					<Link>CREATE A NEW ACCOUNT</Link>
+					<Link to="/studentRegister">DO NOT YOU REMEMBER THE PASSWORD?</Link>
+					<Link to="/studentRegister">CREATE A NEW ACCOUNT</Link>
 				</Form>
 			</Wrapper>
 		</Container>

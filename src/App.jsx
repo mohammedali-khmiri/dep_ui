@@ -1,8 +1,8 @@
 import New from "./pages/New";
 import Home from "./pages/Home";
 import NewsList from "./pages/NewsList";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import StudentRegister from "./pages/StudentRegister";
+import StudentLogin from "./pages/StudentLogin";
 import TeacherList from "./pages/TeacherList";
 import {
 	BrowserRouter as Router,
@@ -33,9 +33,11 @@ const App = () => {
 				<Route path="/teacher/:id">
 					<Teacher />
 				</Route>
-				<Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
-				<Route path="/register">
-					{user ? <Redirect to="/" /> : <Register />}
+				<Route path="/studentLogin">
+					{user ? <Redirect to="/" /> : <StudentLogin />}
+				</Route>
+				<Route path="/studentRegister">
+					{user ? <Redirect to="/" /> : <StudentRegister />}
 				</Route>
 			</Switch>
 		</Router>
