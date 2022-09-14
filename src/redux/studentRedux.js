@@ -4,6 +4,7 @@ export const studentSlice = createSlice({
 	name: "student",
 	initialState: {
 		students: [],
+		currentUser: null,
 		isFetching: false,
 		error: false,
 	},
@@ -21,6 +22,19 @@ export const studentSlice = createSlice({
 			state.isFetching = false;
 			state.error = true;
 		},
+
+		//login student
+		loginStudentStart: (state) => {
+			state.isFetching = true;
+		},
+		loginStudentSuccess: (state, action) => {
+			state.isFetching = false;
+			state.currentUser = action.payload;
+		},
+		loginStudentFailure: (state) => {
+			state.isFetching = false;
+			state.error = true;
+		},
 	},
 });
 
@@ -28,6 +42,9 @@ export const {
 	RegisterStudentStart,
 	RegisterStudentSuccess,
 	RegisterStudentFailure,
+	loginStudentStart,
+	loginStudentSuccess,
+	loginStudentFailure,
 } = studentSlice.actions;
 
 export default studentSlice.reducer;

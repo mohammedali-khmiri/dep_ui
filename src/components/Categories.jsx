@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { categories } from "../data";
 import { mobile } from "../responsive";
-import CategoryItem from "./CategoryItem";
 
 const Container = styled.div`
 	display: flex;
@@ -60,7 +58,7 @@ const Categories = () => {
 	return (
 		<Container>
 			<ItemCategory>
-				<Link to="/studentLogin">
+				<Link to="/studentRegister">
 					<IngContainer>
 						<Image src="https://cdn.icon-icons.com/icons2/1670/PNG/512/10207manstudentlightskintone_110568.png" />
 					</IngContainer>
@@ -71,7 +69,7 @@ const Categories = () => {
 				</Link>
 			</ItemCategory>
 			<ItemCategory>
-				<Link>
+				<Link to="/teacherRegister">
 					<IngContainer>
 						<Image src="https://cdn.icon-icons.com/icons2/3600/PNG/512/training_doctor_hospital_heh_gym_icon_226271.png" />
 					</IngContainer>

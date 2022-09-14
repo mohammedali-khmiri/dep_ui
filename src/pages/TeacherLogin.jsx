@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { loginStudent } from "../redux/apiCalls";
+import { loginTeacher } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -12,7 +12,7 @@ const Container = styled.div`
 			rgba(255, 255, 255, 0.3),
 			rgba(255, 255, 255, 0.3)
 		),
-		url("https://img.freepik.com/free-photo/free-time-students-bachelor-s-campus-life-rhythm-five-friendly-students-are-walking_8353-6408.jpg?size=626&ext=jpg")
+		url("https://img.freepik.com/free-photo/group-students-happy-be-back-university_23-2148586613.jpg?size=626&ext=jpg")
 			center;
 	background-size: cover;
 	display: flex;
@@ -89,22 +89,22 @@ const MenuItem = styled.div`
 	${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
-const Login = () => {
+const TeacherLogin = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const dispatch = useDispatch();
 	const history = useHistory();
-	const { isFetching, error } = useSelector((state) => state.student);
+	const { isFetching, error } = useSelector((state) => state.teacher);
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		loginStudent(dispatch, { email, password }).then(() => history.push("/"));
+		loginTeacher(dispatch, { email, password }).then(() => history.push("/"));
 	};
 
 	return (
 		<Container>
 			<Nav>
-				<MenuItem>Espace Etudiant</MenuItem>
+				<MenuItem>Espace Enseignant</MenuItem>
 				<MenuItem>Accueil</MenuItem>
 				<MenuItem>Contact</MenuItem>
 			</Nav>
@@ -132,4 +132,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default TeacherLogin;

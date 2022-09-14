@@ -1,6 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import studentRedux from "./studentRedux";
 import userRedux from "./userRedux";
+import teacherRedux from "./teacherRedux";
 import {
 	persistStore,
 	persistReducer,
@@ -21,6 +22,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	student: studentRedux,
+	teacher: teacherRedux,
 	user: userRedux,
 });
 

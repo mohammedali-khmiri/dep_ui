@@ -12,9 +12,12 @@ import {
 } from "react-router-dom";
 import Teacher from "./pages/Teacher";
 import { useSelector } from "react-redux";
+import TeacherRegister from "./pages/TeacherRegister";
+import TeacherLogin from "./pages/TeacherLogin";
 
 const App = () => {
-	const user = useSelector((state) => state.user.currentUser);
+	const userS = useSelector((state) => state.student.currentUser);
+	const userT = useSelector((state) => state.teacher.currentUser);
 	return (
 		<Router>
 			<Switch>
@@ -34,10 +37,16 @@ const App = () => {
 					<Teacher />
 				</Route>
 				<Route path="/studentLogin">
-					{user ? <Redirect to="/" /> : <StudentLogin />}
+					{userS || userT ? <Redirect to="/" /> : <StudentLogin />}
 				</Route>
 				<Route path="/studentRegister">
-					{user ? <Redirect to="/" /> : <StudentRegister />}
+					{userS || userT ? <Redirect to="/" /> : <StudentRegister />}
+				</Route>
+				<Route path="/teacherLogin">
+					{userT || userS ? <Redirect to="/" /> : <TeacherLogin />}
+				</Route>
+				<Route path="/teacherRegister">
+					{userT || userS ? <Redirect to="/" /> : <TeacherRegister />}
 				</Route>
 			</Switch>
 		</Router>

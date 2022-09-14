@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import { registerStudent } from "../redux/apiCalls";
+import { registerTeacher } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
@@ -12,7 +12,7 @@ const Container = styled.div`
 			rgba(255, 255, 255, 0.5),
 			rgba(255, 255, 255, 0.5)
 		),
-		url("https://img.freepik.com/free-photo/multinational-graduates-male-female-celebrating-graduation-university-campus-removing-their-graduation-hats-smiling-camera_496169-1297.jpg?size=626&ext=jpg")
+		url("https://img.freepik.com/free-photo/education-concept-student-studying-brainstorming-campus-concept-close-up-students-discussing-their-subject-books-textbooks-selective-focus_1418-627.jpg?size=626&ext=jpg")
 			center;
 	background-size: cover;
 	display: flex;
@@ -88,7 +88,7 @@ const MenuItem = styled.div`
 	${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
-const Register = () => {
+const TeacherRegister = () => {
 	const [inputs, setInputs] = useState({});
 	const dispatch = useDispatch();
 	const history = useHistory();
@@ -102,16 +102,16 @@ const Register = () => {
 	const handleClick = (e) => {
 		e.preventDefault();
 
-		const student = { ...inputs };
-		registerStudent(student, dispatch).then(() =>
-			history.push("/studentLogin")
+		const teacher = { ...inputs };
+		registerTeacher(teacher, dispatch).then(() =>
+			history.push("/teacherLogin")
 		);
 	};
 
 	return (
 		<Container>
 			<Nav>
-				<MenuItem>Espace Etudiant</MenuItem>
+				<MenuItem>Espace Enseignant</MenuItem>
 				<MenuItem>Accueil</MenuItem>
 				<MenuItem>Contact</MenuItem>
 			</Nav>
@@ -121,32 +121,19 @@ const Register = () => {
 					<Input
 						name="firstName"
 						type="text"
-						placeholder="Nom Etudiant..."
+						placeholder="Nom Enseignant..."
 						onChange={handleChange}
 					/>
 					<Input
 						name="lastName"
 						type="text"
-						placeholder="Prenom Etudiant..."
+						placeholder="Prenom Enseignant..."
 						onChange={handleChange}
 					/>
 					<Input
-						name="nCin"
-						type="number"
-						placeholder="N° cin..."
-						onChange={handleChange}
-					/>
-
-					<Input
-						name="nInscription"
-						type="number"
-						placeholder="N° inscription..."
-						onChange={handleChange}
-					/>
-					<Input
-						name="phone"
-						type="number"
-						placeholder="telephone"
+						name="email"
+						type="email"
+						placeholder="email"
 						onChange={handleChange}
 					/>
 					<Input
@@ -156,15 +143,30 @@ const Register = () => {
 						onChange={handleChange}
 					/>
 					<Input
-						name="email"
-						type="email"
-						placeholder="email"
+						name="phone"
+						type="number"
+						placeholder="telephone"
 						onChange={handleChange}
 					/>
-					<Select name="class" onChange={handleChange}>
-						<Option value="dsi">DSI</Option>
-						<Option value="rsi">RSI</Option>
-						<Option value="sem">SEM</Option>
+					<Input
+						name="codeEns"
+						type="number"
+						placeholder="Matriculle "
+						onChange={handleChange}
+					/>
+					<Select name="grade" onChange={handleChange}>
+						<Option value="chef departement">Chef Departement</Option>
+						<Option value="professeur">Professeur</Option>
+						<Option value="assistant">Assistant</Option>
+						<Option value="maitre assistant">Maitre Assistant</Option>
+					</Select>
+
+					<Select name="specialty" onChange={handleChange}>
+						<Option value="big data">Big Data</Option>
+						<Option value="soap">Soap</Option>
+						<Option value="reseau">Réseau</Option>
+						<Option value="developpement">Développement</Option>
+						<Option value="mobile">Mobile</Option>
 					</Select>
 					<Input
 						name="password"
@@ -183,4 +185,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default TeacherRegister;
