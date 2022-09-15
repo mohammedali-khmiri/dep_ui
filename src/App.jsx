@@ -14,6 +14,7 @@ import Teacher from "./pages/Teacher";
 import { useSelector } from "react-redux";
 import TeacherRegister from "./pages/TeacherRegister";
 import TeacherLogin from "./pages/TeacherLogin";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
 	const userS = useSelector((state) => state.student.currentUser);
@@ -23,6 +24,10 @@ const App = () => {
 			<Switch>
 				<Route exact path="/">
 					<Home />
+				</Route>
+
+				<Route path="/profile">
+					<Profile />
 				</Route>
 				<Route path="/news">
 					<NewsList />

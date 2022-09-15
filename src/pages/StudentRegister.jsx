@@ -4,6 +4,7 @@ import { registerStudent } from "../redux/apiCalls";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import { useRef } from "react";
 
 const Container = styled.div`
 	width: 100vw;
@@ -92,6 +93,8 @@ const Register = () => {
 	const [inputs, setInputs] = useState({});
 	const dispatch = useDispatch();
 	const history = useHistory();
+	const password = useRef();
+	const confirmPassword = useRef();
 
 	const handleChange = (e) => {
 		setInputs((prev) => {
@@ -101,11 +104,14 @@ const Register = () => {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-
-		const student = { ...inputs };
-		registerStudent(student, dispatch).then(() =>
-			history.push("/studentLogin")
-		);
+		if (confirmPassword.current.value !== password.current.value) {
+			confirmPassword.current.setCustomValidity("Passwords don't match!");
+		} else {
+			const student = { ...inputs };
+			registerStudent(student, dispatch).then(() =>
+				history.push("/studentLogin")
+			);
+		}
 	};
 
 	return (
@@ -117,21 +123,24 @@ const Register = () => {
 			</Nav>
 			<Wrapper>
 				<Title>CREATE AN ACCOUNT</Title>
-				<Form>
+				<Form onSubmit={handleClick}>
 					<Input
 						name="firstName"
 						type="text"
+						required
 						placeholder="Nom Etudiant..."
 						onChange={handleChange}
 					/>
 					<Input
 						name="lastName"
 						type="text"
+						required
 						placeholder="Prenom Etudiant..."
 						onChange={handleChange}
 					/>
 					<Input
 						name="nCin"
+						required
 						type="number"
 						placeholder="N° cin..."
 						onChange={handleChange}
@@ -139,44 +148,56 @@ const Register = () => {
 
 					<Input
 						name="nInscription"
+						required
 						type="number"
 						placeholder="N° inscription..."
 						onChange={handleChange}
 					/>
 					<Input
 						name="phone"
+						required
 						type="number"
 						placeholder="telephone"
 						onChange={handleChange}
 					/>
 					<Input
 						name="address"
+						required
 						type="text"
 						placeholder="address"
 						onChange={handleChange}
 					/>
 					<Input
 						name="email"
+						required
 						type="email"
 						placeholder="email"
 						onChange={handleChange}
 					/>
-					<Select name="class" onChange={handleChange}>
+					<Select name="class" required onChange={handleChange}>
 						<Option value="dsi">DSI</Option>
 						<Option value="rsi">RSI</Option>
 						<Option value="sem">SEM</Option>
 					</Select>
 					<Input
 						name="password"
+						ref={password}
 						placeholder="password"
 						onChange={handleChange}
+						required
+						minLength="6"
 					/>
-					<Input placeholder="confirm password" onChange={handleChange} />
+					<Input
+						name="confirmPassword"
+						ref={confirmPassword}
+						placeholder="confirm Password"
+						required
+					/>
 					<Agreement>
 						By creating an account, I consent to the processing of my personal
 						data in accordance with the <b>PRIVACY POLICY</b>
 					</Agreement>
-					<Button onClick={handleClick}>CREATE</Button>
+					<Button type="submit">CREATE</Button>
 				</Form>
 			</Wrapper>
 		</Container>

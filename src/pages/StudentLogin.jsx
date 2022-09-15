@@ -4,6 +4,7 @@ import { loginStudent } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Container = styled.div`
 	width: 100vw;
@@ -34,8 +35,7 @@ const Nav = styled.div`
 const Wrapper = styled.div`
 	width: 25%;
 	padding: 20px;
-	background-color: 	rgba(255, 255, 255, 0.6)
-	;
+	background-color: rgba(255, 255, 255, 0.6);
 	${mobile({ width: "75%" })}
 `;
 
@@ -110,18 +110,22 @@ const Login = () => {
 			</Nav>
 			<Wrapper>
 				<Title>Sign In</Title>
-				<Form>
+				<Form onSubmit={handleClick}>
 					<Input
+						type="email"
 						placeholder="Email"
+						required
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<Input
 						placeholder="password"
+						required
 						type="password"
+						minLength="6"
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-					<Button onClick={handleClick} disabled={isFetching}>
-						LOGIN
+					<Button type="submit" disabled={isFetching}>
+						Log In
 					</Button>
 					{error && <Error>Something went wrong...</Error>}
 					<Link to="/studentRegister">DO NOT YOU REMEMBER THE PASSWORD?</Link>
