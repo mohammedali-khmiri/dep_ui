@@ -1,8 +1,9 @@
 import "./rightbar.css";
 import { Users } from "../../dummyData";
 import { useSelector } from "react-redux";
+import { Publish } from "@material-ui/icons";
 
-export default function Rightbar({ profile }) {
+export default function Rightbar() {
 	const userS = useSelector((state) => state.student.currentUser);
 	const userT = useSelector((state) => state.teacher.currentUser);
 	if (userS) {
@@ -59,6 +60,18 @@ export default function Rightbar({ profile }) {
 				<div className="productBottom">
 					<form className="productForm">
 						<div className="productFormLeft">
+							<div className="productUpload">
+								<img src={currUser.img} alt="" className="productUploadImg" />
+								<label for="file">
+									<Publish style={{ cursor: "pointer" }} />
+								</label>
+								<input
+									type="file"
+									id="file"
+									style={{ display: "none" }}
+									// onChange={(e) => setFile(e.target.files[0])}
+								/>
+							</div>
 							<input
 								name="id"
 								type="text"
@@ -103,18 +116,6 @@ export default function Rightbar({ profile }) {
 							/>
 						</div>
 						<div className="productFormRight">
-							<div className="productUpload">
-								<img src={currUser.img} alt="" className="productUploadImg" />
-								<label for="file">
-									{/* <Publish style={{ cursor: "pointer" }} /> */}
-								</label>
-								<input
-									type="file"
-									id="file"
-									style={{ display: "none" }}
-									// onChange={(e) => setFile(e.target.files[0])}
-								/>
-							</div>
 							<button className="productButton">Update</button>
 						</div>
 					</form>

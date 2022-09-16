@@ -15,6 +15,7 @@ const ItemCategory = styled.div`
 	flex: 1;
 	margin: 2px;
 	height: 30vh;
+	background-color: rgba(200, 200, 200, 0.1);
 `;
 const IngContainer = styled.div`
 	display: flex;
@@ -58,9 +59,15 @@ const Categories = () => {
 	return (
 		<Container>
 			<ItemCategory>
-				<Link to="/studentRegister">
+				<Link
+					to="/studentRegister"
+					style={{
+						textDecoration: "none",
+						color: "black",
+					}}
+				>
 					<IngContainer>
-						<Image src="https://cdn.icon-icons.com/icons2/1670/PNG/512/10207manstudentlightskintone_110568.png" />
+						<Image src="https://cdn.icon-icons.com/icons2/1670/PNG/128/10207manstudentlightskintone_110568.png" />
 					</IngContainer>
 					<Info>
 						<Title>Espace Etudiant</Title>
@@ -69,9 +76,15 @@ const Categories = () => {
 				</Link>
 			</ItemCategory>
 			<ItemCategory>
-				<Link to="/teacherRegister">
+				<Link
+					to="/teacherRegister"
+					style={{
+						textDecoration: "none",
+						color: "black",
+					}}
+				>
 					<IngContainer>
-						<Image src="https://cdn.icon-icons.com/icons2/3600/PNG/512/training_doctor_hospital_heh_gym_icon_226271.png" />
+						<Image src="https://cdn.icon-icons.com/icons2/343/PNG/128/Teacher-male_35748.png" />
 					</IngContainer>
 					<Info>
 						<Title>Espace Enseignant</Title>
@@ -80,7 +93,12 @@ const Categories = () => {
 				</Link>
 			</ItemCategory>
 			<ItemCategory>
-				<Link>
+				<Link
+					style={{
+						textDecoration: "none",
+						color: "black",
+					}}
+				>
 					<IngContainer>
 						<Image src="https://cdn.icon-icons.com/icons2/3600/PNG/128/university_library_reading_student_book_learning_school_icon_226270.png" />
 					</IngContainer>

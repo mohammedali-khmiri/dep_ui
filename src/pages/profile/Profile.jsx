@@ -44,8 +44,8 @@ export default function Profile() {
 						</div>
 					</div>
 					<div className="profileRightBottom">
-						<Feed />
-						<Rightbar userS />
+						{/* <Feed /> */}
+						<Rightbar  />
 					</div>
 				</div>
 			</div>

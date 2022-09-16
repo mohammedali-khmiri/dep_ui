@@ -1,7 +1,7 @@
 export const sliderItems = [
 	{
 		id: 1,
-		img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_8DZBKyiydLWWSXEXh0U_B8M7LdVSh9tK6EMl8nP5t43n9H6SiS_87mNRQeyx-vK3Xj8&usqp=CAU",
+		img: "https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-9/155573151_1454648524886005_6792051212310806144_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0debeb&_nc_ohc=9CZlF8lt--wAX_Zwo4U&_nc_ht=scontent.ftun15-1.fna&oh=00_AT_3iJAQr_WRFayAv_kSZrChetrZtQ5tvwUgyNZ_gthgSw&oe=63490F91",
 		title: "Bienvenue ",
 		desc: "à l'ISET de Jendouba",
 		bg: "f5fafd",
@@ -9,14 +9,14 @@ export const sliderItems = [
 	},
 	{
 		id: 2,
-		img: "https://www.chercheinfo.com/uploads/0-cb422ec699.png",
+		img: "https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-9/161783571_1467117373639120_4525178825955347896_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0debeb&_nc_ohc=M_KTFtLdoJgAX__NSa-&_nc_ht=scontent.ftun15-1.fna&oh=00_AT-oT3RdipC0E3_rnKC8Vm4c0F_qXj-AJqUfgtK8svRR8A&oe=6349CE1E",
 		title: "ISET Jendouba",
 		desc: "Une formation technologique diversifiée",
 		bg: "fcf1ed",
 	},
 	{
 		id: 3,
-		img: "https://www.tunisie-tribune.com/wp-content/uploads/2016/01/Salon-de-lemploi-Job-CONECT-Jendouba-plus-de-130-opportunit%C3%A9s-demploi.jpg",
+		img: "https://scontent.ftun15-1.fna.fbcdn.net/v/t1.6435-9/142647581_1432082073809317_8143322628341406787_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=0debeb&_nc_ohc=tdRW8Ft4TaAAX-9D5WJ&_nc_ht=scontent.ftun15-1.fna&oh=00_AT-P5uo8QB8AZGpEIwWBIvtLk28Aq6PUZCk_vCRgOkRAWQ&oe=6348A953",
 		title: "Amphi-Théatre pour Evennement",
 		desc: "",
 		bg: "fbf0f4",
